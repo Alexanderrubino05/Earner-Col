@@ -11,7 +11,7 @@ import SwiftUI
 struct Earner_ColApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

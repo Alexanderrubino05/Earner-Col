@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		EF798A052988374200F5EF65 /* Earner_ColApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A042988374200F5EF65 /* Earner_ColApp.swift */; };
-		EF798A072988374200F5EF65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A062988374200F5EF65 /* ContentView.swift */; };
+		EF798A072988374200F5EF65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A062988374200F5EF65 /* LoginView.swift */; };
 		EF798A092988374A00F5EF65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF798A082988374A00F5EF65 /* Assets.xcassets */; };
 		EF798A0C2988374A00F5EF65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF798A0B2988374A00F5EF65 /* Preview Assets.xcassets */; };
 		EF798A162988374B00F5EF65 /* Earner_ColTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A152988374B00F5EF65 /* Earner_ColTests.swift */; };
 		EF798A202988374B00F5EF65 /* Earner_ColUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A1F2988374B00F5EF65 /* Earner_ColUITests.swift */; };
 		EF798A222988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A212988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift */; };
+		EF798A2F29883C2000F5EF65 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A2E29883C2000F5EF65 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		EF798A012988374200F5EF65 /* Earner Col.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Earner Col.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF798A042988374200F5EF65 /* Earner_ColApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earner_ColApp.swift; sourceTree = "<group>"; };
-		EF798A062988374200F5EF65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF798A062988374200F5EF65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EF798A082988374A00F5EF65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF798A0B2988374A00F5EF65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF798A112988374B00F5EF65 /* Earner ColTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Earner ColTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		EF798A1B2988374B00F5EF65 /* Earner ColUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Earner ColUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF798A1F2988374B00F5EF65 /* Earner_ColUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earner_ColUITests.swift; sourceTree = "<group>"; };
 		EF798A212988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earner_ColUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF798A2E29883C2000F5EF65 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				EF798A042988374200F5EF65 /* Earner_ColApp.swift */,
-				EF798A062988374200F5EF65 /* ContentView.swift */,
+				EF798A062988374200F5EF65 /* LoginView.swift */,
+				EF798A2E29883C2000F5EF65 /* Extensions.swift */,
 				EF798A082988374A00F5EF65 /* Assets.xcassets */,
 				EF798A0A2988374A00F5EF65 /* Preview Content */,
 			);
@@ -257,7 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF798A072988374200F5EF65 /* ContentView.swift in Sources */,
+				EF798A072988374200F5EF65 /* LoginView.swift in Sources */,
+				EF798A2F29883C2000F5EF65 /* Extensions.swift in Sources */,
 				EF798A052988374200F5EF65 /* Earner_ColApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
