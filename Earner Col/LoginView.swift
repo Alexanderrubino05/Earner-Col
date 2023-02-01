@@ -19,6 +19,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            Text("SIUUUUUUU")
             if currentSliderValue == "Login" {
                 VStack {
                     sliderView
