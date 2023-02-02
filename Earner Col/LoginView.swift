@@ -19,6 +19,8 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            Text("SIUUUUUUU")
+            Text("Temad")
             if currentSliderValue == "Login" {
                 VStack {
                     sliderView
@@ -171,7 +173,7 @@ struct LoginView: View {
                 )
                     .opacity(0.35)
                     .frame(width: backgroundWidth, height: backgroundHeight)
-                    .cornerRadius(90, corners: [.bottomLeft, .bottomRight])
+                    .cornerRadius(125, corners: [.bottomLeft, .bottomRight])
                     .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
             }
             
