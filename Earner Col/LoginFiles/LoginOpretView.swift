@@ -1,17 +1,18 @@
 //
-//  ContentView.swift
+//  LoginOpretView.swift
 //  Earner Col
 //
-//  Created by Alexander Rubino on 30/01/2023.
+//  Created by Alexander Rubino on 02/02/2023.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct LoginOpretView: View {
+    //Presenting Views
+    @State private var showOptretView = false
     
     //Slider
     @State private var currentSliderValue = "Login"
-    @Namespace var animation
     
     //Email & Password
     @State private var email = ""
@@ -19,8 +20,6 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Text("SIUUUUUUU")
-            Text("Temad")
             if currentSliderValue == "Login" {
                 VStack {
                     sliderView
@@ -62,6 +61,48 @@ struct LoginView: View {
                 .edgesIgnoringSafeArea(.top)
                 .padding(.bottom, UIScreen.screenHeight / 2)
         )
+        .fullScreenCover(isPresented: $showOptretView) {
+            //Viser OpretView når showOpretView ændres
+            OpretView()
+        }
+    }
+    
+    //Bagrunden
+    //Size for baggrunden
+    var backgroundWidth = UIScreen.screenWidth
+    var backgroundHeight = UIScreen.screenHeight
+    
+    var colorBackground: some View {
+        VStack {
+            if currentSliderValue == "Login" {
+                // Den grønne baggrund
+                LinearGradient(
+                    colors: [Color(r: 2, g: 75, b: 24),
+                             Color(r: 7, g: 223, b: 16)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                    .opacity(0.35)
+                    .frame(width: backgroundWidth, height: backgroundHeight)
+                    .cornerRadius(85, corners: [.bottomLeft, .bottomRight])
+                    .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
+            }
+            
+            if currentSliderValue == "Opret" {
+                // Den blå baggrund
+                LinearGradient(colors: [Color(r: 0, g: 63, b: 77),
+                                        Color(r: 1, g: 195, b: 238)],
+                               startPoint: .top,
+                               endPoint: .bottom
+                )
+                    .opacity(0.35)
+                    .frame(width: backgroundWidth, height: backgroundHeight)
+                    .cornerRadius(85, corners: [.bottomLeft, .bottomRight])
+                    .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
+            }
+            
+            Spacer()
+        }
     }
     
     //Login med Google og Facebook
@@ -106,17 +147,23 @@ struct LoginView: View {
     
     //Login og Opret knap
     var LoginOrOpretButton: some View {
-        HStack {
-            Text(currentSliderValue == "Login" ? "Login" : "Opret")
-                .foregroundColor(.white)
-                .font(.system(size: 20, weight: .semibold))
-                .padding()
-                .frame(maxWidth: .infinity)
-                .shadow(radius: 10,  x: 0, y: 5)
+        Button {
+            if currentSliderValue == "Opret" {
+                showOptretView = true
+            }
+        } label: {
+            HStack {
+                Text(currentSliderValue == "Login" ? "Login" : "Opret")
+                    .foregroundColor(.white)
+                    .font(.system(size: 20, weight: .semibold))
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .shadow(radius: 10,  x: 0, y: 5)
+            }
+            .background(.black.opacity(0.4))
+            .cornerRadius(20)
+            .padding(.top)
         }
-        .background(.black.opacity(0.4))
-        .cornerRadius(20)
-        .padding(.top)
     }
     
     //Email og Password textfields
@@ -153,43 +200,6 @@ struct LoginView: View {
             Text("Velkommen til Earner")
                 .font(.system(size: 40, weight: .semibold))
                 .multilineTextAlignment(.leading)
-            Spacer()
-        }
-    }
-    
-    //Size for baggrunden
-    var backgroundWidth = UIScreen.screenWidth
-    var backgroundHeight = UIScreen.screenHeight
-    
-    var colorBackground: some View {
-        VStack {
-            if currentSliderValue == "Login" {
-                // Den grønne baggrund
-                LinearGradient(
-                    colors: [Color(r: 2, g: 75, b: 24),
-                             Color(r: 7, g: 223, b: 16)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                    .opacity(0.35)
-                    .frame(width: backgroundWidth, height: backgroundHeight)
-                    .cornerRadius(125, corners: [.bottomLeft, .bottomRight])
-                    .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
-            }
-            
-            if currentSliderValue == "Opret" {
-                // Den blå baggrund
-                LinearGradient(colors: [Color(r: 0, g: 63, b: 77),
-                                        Color(r: 1, g: 195, b: 238)],
-                               startPoint: .top,
-                               endPoint: .bottom
-                )
-                    .opacity(0.35)
-                    .frame(width: backgroundWidth, height: backgroundHeight)
-                    .cornerRadius(85, corners: [.bottomLeft, .bottomRight])
-                    .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
-            }
-            
             Spacer()
         }
     }
@@ -275,8 +285,8 @@ struct LoginView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginOpretView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginOpretView()
     }
 }
