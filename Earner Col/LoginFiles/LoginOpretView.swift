@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginOpretView: View {
+    //Handle showErrorMessage
+    @State private var showErrorMessage = false
+    
     //Presenting Views
     @State private var showOptretView = false
     
@@ -27,7 +30,14 @@ struct LoginOpretView: View {
                         headlineText
                         emailAndPasswordTextfields
                         forgotPassword
-                        LoginOrOpretButton
+                        ZStack {
+                            if !showErrorMessage { //Det betyder showErrorMessage == false
+                                loginOrOpretButton
+                            }
+                            else {
+                                errorMessage
+                            }
+                        }
                     }
                     .padding(.horizontal)
 
@@ -44,7 +54,14 @@ struct LoginOpretView: View {
                         headlineText
                         emailAndPasswordTextfields
                         googleOrFacebookLogin
-                        LoginOrOpretButton
+                        ZStack {
+                            if !showErrorMessage { //Det betyder showErrorMessage == false
+                                loginOrOpretButton
+                            }
+                            else {
+                                errorMessage
+                            }
+                        }
                     }
                     .padding(.horizontal)
                     
@@ -65,6 +82,34 @@ struct LoginOpretView: View {
             //Viser OpretView når showOpretView ændres
             OpretView()
         }
+    }
+    
+    //ErrorMessage
+    var errorMessage: some View {
+        HStack {
+            //Failed Message
+            Text("Der er sket en fejl")
+                .font(.system(size: 16))
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            //Cancel button
+            Button {
+                withAnimation {
+                    showErrorMessage = false
+                }
+            } label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .thin))
+            }
+        }
+        .padding()
+        .background(.black.opacity(0.4))
+        .cornerRadius(20)
+        .padding(.top)
+        .transition(.asymmetric(insertion: .push(from: .trailing), removal: .push(from: .leading)))
     }
     
     //Bagrunden
@@ -146,10 +191,29 @@ struct LoginOpretView: View {
     }
     
     //Login og Opret knap
-    var LoginOrOpretButton: some View {
+    var loginOrOpretButton: some View {
         Button {
             if currentSliderValue == "Opret" {
-                showOptretView = true
+                if email == "" && password == "" {
+                    // Error Handling
+                    withAnimation {
+                        showErrorMessage = true
+                    }
+                }
+                else {
+                    showOptretView = true
+                }
+            }
+            else if currentSliderValue == "Login" {
+                if email == "" && password == "" {
+                    // Error Handling
+                    withAnimation {
+                        showErrorMessage = true
+                    }
+                }
+                else {
+                    //Handle Login...
+                }
             }
         } label: {
             HStack {
@@ -164,6 +228,7 @@ struct LoginOpretView: View {
             .cornerRadius(20)
             .padding(.top)
         }
+        .transition(.asymmetric(insertion: .push(from: .leading), removal: .push(from: .trailing)))
     }
     
     //Email og Password textfields

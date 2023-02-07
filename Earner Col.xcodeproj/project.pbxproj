@@ -14,6 +14,11 @@
 		EF798A202988374B00F5EF65 /* Earner_ColUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A1F2988374B00F5EF65 /* Earner_ColUITests.swift */; };
 		EF798A222988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A212988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift */; };
 		EF798A2F29883C2000F5EF65 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF798A2E29883C2000F5EF65 /* Extensions.swift */; };
+		EFADE5FB29925841003D42CA /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = EFADE5FA29925841003D42CA /* MapItemPicker */; };
+		EFADE5FE29926E51003D42CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADE5FD29926E51003D42CA /* HomeView.swift */; };
+		EFADE601299272D0003D42CA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADE600299272D0003D42CA /* Post.swift */; };
+		EFADE603299273C8003D42CA /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADE602299273C8003D42CA /* Tag.swift */; };
+		EFADE6052992832D003D42CA /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFADE6042992832D003D42CA /* HomeMainView.swift */; };
 		EFD2D55D298BD21D00AD4B0B /* LoginOpretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2D55C298BD21D00AD4B0B /* LoginOpretView.swift */; };
 		EFD2D565298EC11400AD4B0B /* OpretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2D564298EC11400AD4B0B /* OpretView.swift */; };
 		EFD2D567298EC80800AD4B0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2D566298EC80800AD4B0B /* ImagePicker.swift */; };
@@ -48,6 +53,10 @@
 		EF798A1F2988374B00F5EF65 /* Earner_ColUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earner_ColUITests.swift; sourceTree = "<group>"; };
 		EF798A212988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earner_ColUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF798A2E29883C2000F5EF65 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EFADE5FD29926E51003D42CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EFADE600299272D0003D42CA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EFADE602299273C8003D42CA /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		EFADE6042992832D003D42CA /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
 		EFD2D55C298BD21D00AD4B0B /* LoginOpretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOpretView.swift; sourceTree = "<group>"; };
 		EFD2D564298EC11400AD4B0B /* OpretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpretView.swift; sourceTree = "<group>"; };
 		EFD2D566298EC80800AD4B0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFADE5FB29925841003D42CA /* MapItemPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				EF798A042988374200F5EF65 /* Earner_ColApp.swift */,
+				EFADE5FF299272BE003D42CA /* Posts Control */,
+				EFADE5FC29926E2A003D42CA /* Home View */,
 				EFD2D55B298BD1F100AD4B0B /* LoginFiles */,
 				EFD2D568298EC81100AD4B0B /* Other Views */,
 				EF798A082988374A00F5EF65 /* Assets.xcassets */,
@@ -134,6 +146,24 @@
 				EF798A212988374B00F5EF65 /* Earner_ColUITestsLaunchTests.swift */,
 			);
 			path = "Earner ColUITests";
+			sourceTree = "<group>";
+		};
+		EFADE5FC29926E2A003D42CA /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				EFADE5FD29926E51003D42CA /* HomeView.swift */,
+				EFADE6042992832D003D42CA /* HomeMainView.swift */,
+			);
+			path = "Home View";
+			sourceTree = "<group>";
+		};
+		EFADE5FF299272BE003D42CA /* Posts Control */ = {
+			isa = PBXGroup;
+			children = (
+				EFADE600299272D0003D42CA /* Post.swift */,
+				EFADE602299273C8003D42CA /* Tag.swift */,
+			);
+			path = "Posts Control";
 			sourceTree = "<group>";
 		};
 		EFD2D55B298BD1F100AD4B0B /* LoginFiles */ = {
@@ -179,6 +209,9 @@
 			dependencies = (
 			);
 			name = "Earner Col";
+			packageProductDependencies = (
+				EFADE5FA29925841003D42CA /* MapItemPicker */,
+			);
 			productName = "Earner Col";
 			productReference = EF798A012988374200F5EF65 /* Earner Col.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +284,9 @@
 				Base,
 			);
 			mainGroup = EF7989F82988374200F5EF65;
+			packageReferences = (
+				EFADE5F929925841003D42CA /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */,
+			);
 			productRefGroup = EF798A022988374200F5EF65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,10 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFD2D55D298BD21D00AD4B0B /* LoginOpretView.swift in Sources */,
+				EFADE5FE29926E51003D42CA /* HomeView.swift in Sources */,
 				EF798A2F29883C2000F5EF65 /* Extensions.swift in Sources */,
+				EFADE601299272D0003D42CA /* Post.swift in Sources */,
 				EFD2D565298EC11400AD4B0B /* OpretView.swift in Sources */,
+				EFADE603299273C8003D42CA /* Tag.swift in Sources */,
 				EFD2D567298EC80800AD4B0B /* ImagePicker.swift in Sources */,
 				EF798A052988374200F5EF65 /* Earner_ColApp.swift in Sources */,
+				EFADE6052992832D003D42CA /* HomeMainView.swift in Sources */,
 				EFD2D56B298ECD5300AD4B0B /* Crop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +663,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFADE5F929925841003D42CA /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-map-item-picker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFADE5FA29925841003D42CA /* MapItemPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFADE5F929925841003D42CA /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */;
+			productName = MapItemPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF7989F92988374200F5EF65 /* Project object */;
 }
